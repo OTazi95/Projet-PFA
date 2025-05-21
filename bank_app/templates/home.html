@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Banque</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'homess.css' %}">
+</head>
+<body class="bg-light" style="padding-top: 70px;">
+
+    {% if messages %}
+    <div class="container mt-4">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <video autoplay muted loop id="background-video">
+        <source src="{% static 'image/bankvideo.mp4' %}" type="video/mp4">
+        Désolé, votre navigateur ne supporte pas la vidéo.
+    </video>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        {% csrf_token %}
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-bank2"></i> O&M BANK</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'home' %}"><i class="bi bi-house-door"></i> Accueil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-cash-coin"></i> Transactions
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{% url 'versement' %}"><i class="bi bi-plus-circle"></i> Versement</a></li>
+                            <li><a class="dropdown-item" href="{% url 'virement' %}"><i class="bi bi-arrow-right-circle"></i> Virement</a></li>
+                            <li><a class="dropdown-item" href="{% url 'retrait' %}"><i class="bi bi-dash-circle"></i> Retrait</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'historique' %}"><i class="bi bi-clock-history"></i> Historique</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}"><i class="bi bi-envelope"></i> Contact</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav">
+                    <a class="nav-link" href="{% url 'logout' %}"><i class="bi bi-box-arrow-right"></i> Déconnexion</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="welcome-section text-center mb-4">
+            <h1 class="text-dark"><i class="bi bi-person-circle"></i> Bienvenue {{ client.prenom }} {{ client.nom }} !</h1>
+            <p class="custom-lead">Gérez vos comptes et suivez vos transactions en toute simplicité.</p>
+        </div>
+
+        <div class="container mt-5" >
+            <div class="text-center mb-4">
+                <h2>Vos comptes</h2>
+            </div>
+
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header custom-header d-flex justify-content-between align-items-center">
+                    <h2><i class="bi bi-wallet2"></i> Vos comptes</h2>
+                    <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#confirmationModal">
+                        Créer un compte épargne
+                    </button>
+                </div>
+
+                <div class="card-body">
+                    <div class="row">
+                        {% for compte in comptes %}
+                            <div class="col-md-4 mb-3">
+                                <div class="card account-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><i class="bi bi-credit-card"></i> Compte {{ compte.numero }}</h5>
+                                        <p class="card-text"><i class="bi bi-tag"></i> Type: {{ compte.type }}</p>
+                                        <p class="card-text"><i class="bi bi-cash-stack"></i> Solde: {{ compte.solde }} MAD</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modale de confirmation moderne -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow rounded-4">
+          <div class="modal-header bg-primary text-white rounded-top">
+            <h5 class="modal-title" id="confirmationModalLabel">
+              <i class="bi bi-piggy-bank-fill"></i> Confirmation de création
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+          </div>
+          <div class="modal-body text-dark text-center">
+            <p>Souhaitez-vous vraiment créer un <strong>compte épargne</strong> ?</p>
+            <p class="small text-muted">Un seul compte épargne est autorisé par client.</p>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+            <form method="post" action="{% url 'creer_compte_epargne' %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">Oui, créer</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

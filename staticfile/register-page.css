@@ -1,0 +1,146 @@
+body.register-page {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f7f9fc;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.register-container {
+    width: 350px; /* Réduction de la largeur du conteneur */
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.register-container:hover {
+    transform: translateY(-10px);
+}
+
+.logo {
+    text-align: center;
+    font-size: 30px;
+    color: #2980b9;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin: 12px 0 5px;
+    color: #34495e;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f7f9fc;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #3498db;
+    background-color: #e9f5ff;
+    outline: none;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.erreur {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    background-color: #2ecc71;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: #27ae60;
+}
+
+button:focus {
+    outline: none;
+}
+
+button i {
+    margin-right: 10px; /* Espacement entre l'icône et le texte */
+}
+
+form .form-group i {
+    margin-right: 8px;
+}
+
+/* Style pour les icônes dans le lien */
+a i {
+    margin-right: 5px;
+    font-size: 16px;
+    color: #4CAF50;
+}
+form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f7f9fc;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    resize: vertical;
+    min-height: 80px; /* Réduction de la hauteur */
+}
+
+@media (max-width: 500px) {
+    form textarea {
+        min-height: 60px; /* Encore plus petit sur les petits écrans */
+    }
+}
+
+@media (max-width: 500px) {
+    .register-container {
+        width: 100%;
+        padding: 25px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    form input,
+    form textarea {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}

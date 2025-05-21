@@ -1,0 +1,193 @@
+/* STYLE PRINCIPAL POUR LA PAGE ACCUEIL BANQUE */
+
+body {
+    background:white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+#background-video {
+    position: fixed;  /* Fixe la vidéo en arrière-plan */
+    top: 0;
+    left: 0;
+    width: 100%;  /* Largeur complète de la fenêtre */
+    height: 100%;  /* Hauteur complète de la fenêtre */
+    object-fit: cover;  /* Assure que la vidéo couvre toute la zone sans déformation */
+    z-index: -1;  /* Place la vidéo derrière les autres éléments de la page */
+}
+
+
+.custom-navbar {
+    background-color: white; /* violet Bootstrap */
+}
+
+/* Navbar */
+.navbar {
+    background-color:  #2980b9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.navbar .nav-link {
+    color: #e3e3e3;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+    color: #ffffff;
+    background-color:  #2980b9;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
+/* Titres */
+h1, h2 {
+    color:  black;
+}
+
+/* Cartes */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+}
+
+.card-header {
+    background-color:  white;
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+/* Comptes */
+.account-card {
+    background: linear-gradient(to right, #e3efff, #f9faff);
+    border: 1px solid #dce3ec;
+    border-radius: 12px;
+}
+.account-card .card-title {
+    color:  #2980b9;
+}
+
+/* Transactions */
+.transaction-positive {
+    color: #198754;
+    font-weight: bold;
+}
+
+.transaction-negative {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.table th {
+    background-color: #e9f1fa;
+    color: #1e3d59;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+/* Barre de recherche */
+#searchInput {
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    transition: 0.3s ease;
+}
+
+#searchInput:focus {
+    border-color:  #2980b9;
+    box-shadow: 0 0 5px rgba(30, 61, 89, 0.3);
+}
+
+/* Section Bienvenue */
+.welcome-section h1 {
+    font-size: 2.2rem;
+    color:  #2980b9;
+}
+
+.welcome-section p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card-header h2 {
+        font-size: 1.2rem;
+    }
+    .welcome-section h1 {
+        font-size: 1.5rem;
+    }
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.btn-custom {
+    background-color:  #2980b9;
+    color: #fff;
+    border-radius: 8px;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color:  #2980b9;
+}
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    .navbar .nav-link {
+        padding: 5px;
+    }
+}
+
+.btn-custom {
+    background-color:#2980b9; /* Couleur de fond (ex: vert) */
+    border: 2px solid #87CEEB; /* Bordure de couleur (ex: vert plus foncé) */
+    color: white; /* Couleur du texte */
+}
+
+.btn-custom:hover {
+    background-color: #87CEEB; /* Changer la couleur au survol */
+    border-color: #2980b9; /* Bordure plus foncée au survol */
+}
+
+.custom-header {
+    color:  #2980b9;
+    background-color:#87CEEB; ;
+}
+
+.custom-lead {
+    font-size: 1.3rem; /* Ajuste la taille selon ton besoin (ex. 1.5rem, 20px, etc.) */
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    flex: 1;
+}
+
+footer {
+    margin-top: auto;
+}
+

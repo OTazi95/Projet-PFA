@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center; /* Centre le formulaire horizontalement */
+    align-items: center; /* Centre le formulaire verticalement */
+    height: 100vh; /* Utilise toute la hauteur de la fenêtre */
+    margin: 0;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 400px;
+    max-width: 100%; /* Garantir que le formulaire ne dépasse pas de la largeur de l'écran */
+    box-sizing: border-box; /* Prendre en compte la largeur du padding dans le calcul du width */
+}
+
+h2 {
+    text-align: center;
+    color:rgba(184, 30, 184, 0.992);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 14px;
+    color: #888;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(184, 30, 184, 0.992);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button i {
+    margin-right: 10px; /* Espacement entre l'icône et le texte */
+}
+
+a {
+    color:rgba(184, 30, 184, 0.992);
+}
+
+button:hover {
+    background-color: rgba(184, 30, 184, 0.992);
+}
+
+/* Style pour les icônes dans le lien */
+a i {
+    margin-right: 5px;
+    font-size: 16px;
+    color: rgba(184, 30, 184, 0.992);
+}
+p {
+    text-align: center; /* Centrer le texte */
+    margin-top: 20px; /* Espacement au-dessus du lien */
+}

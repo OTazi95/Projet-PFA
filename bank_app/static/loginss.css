@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('/static/image/bank4.png') no-repeat center center fixed;
+    background-size: 100% 100vh; /* Ajuste la largeur à 100% et la hauteur à 100vh */
+    background-position: center center; /* Centrer l'image */
+    background-repeat: no-repeat; /* Empêcher la répétition de l'image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.login-container {
+    background-color: transparent;
+    backdrop-filter: blur(3px);  /* Couleur blanche avec une opacité de 80% */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 40px 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 420px;
+    transition: all 0.3s ease-in-out;
+    margin-top: 120px; /* Ajoute une marge en haut pour descendre le formulaire */
+}
+
+
+
+.login-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #0e1c16;
+    font-size: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: 700;
+    display: block;
+    margin: 18px 0 6px;
+    color: #f2f2f2; /* Gris très clair presque blanc */
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2980b9;
+    box-shadow: 0 0 5px rgba(184, 30, 184, 0.2);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2980b9;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a i {
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 30px 20px;
+        border-radius: 15px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 15px;
+    }
+}

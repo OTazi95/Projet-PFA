@@ -1,0 +1,154 @@
+.register-page {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ecf0f1;
+    background: url('/static/image/bank4.png') no-repeat center center fixed;
+    background-size: cover;    
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.register-container {
+    background-color: transparent;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 120px;
+}
+
+
+.register-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+    text-align: center;
+    font-size: 60px;
+    color: rgba(0, 0, 51, 0.7);
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+form label {
+    font-weight: 700;
+    display: block;
+    margin: 18px 0 6px;
+    color: #f2f2f2; /* Gris très clair presque blanc */
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+
+/* Appliquer des styles aux champs de saisie pour les rendre plus petits et bordurés */
+form input,
+form textarea {
+    width: 100%;
+    max-width: 330px; /* Limite la largeur des champs */
+    padding: 10px 12px; /* Moins de padding pour les rendre plus compacts */
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Coins arrondis */
+    background-color: #f9f9f9;
+    margin-bottom: 15px; /* Espacement réduit entre les champs */
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus sur les champs */
+form input:focus,
+form textarea:focus {
+    border-color: #3498db;
+    background-color: #eaf6ff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
+}
+
+/* Champ textarea (adresse) */
+form textarea {
+    resize: vertical;
+    min-height: 100px;  /* Hauteur ajustée */
+}
+
+/* Gestion des erreurs */
+.erreur {
+    color: #e74c3c;
+    font-size: 15px;
+    margin-top: 12px;
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2980b9;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+form .form-group i {
+    margin-right: 8px;
+}
+
+a i {
+    margin-right: 5px;
+    font-size: 16px;
+    color: #4CAF50;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .register-container {
+        padding: 25px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    form input,
+    form textarea {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+
+.custom-btn{
+    width: 100%;
+    padding: 12px;
+    background-color: #2980b9;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
